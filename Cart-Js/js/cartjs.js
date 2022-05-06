@@ -31,7 +31,7 @@ addBtn.addEventListener("click", () => {
   let Btn_div = document.createElement("div");
   let Btn_button = document.createElement("button");
   Btn_div.id = "button-id";
-  Btn_div.className = "button-class";
+  Btn_div.className = "btn btn-success";
   Btn_button.innerHTML = "Add Data";
   Btn_div.appendChild(Btn_button);
   wrapper_div.appendChild(Btn_div);
