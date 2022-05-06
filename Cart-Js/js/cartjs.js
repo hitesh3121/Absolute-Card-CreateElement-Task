@@ -1,7 +1,7 @@
 const addBtn = document.querySelector(".addBtn");
 
 addBtn.addEventListener("click", () => {
-  console.log("We ara inside add  funbction");
+  console.log("We ara inside add  function");
   // wrapper div
   let wrapper_div = document.createElement("div");
   wrapper_div.id = "wrapper-id";
