@@ -1,8 +1,8 @@
 let dataArray = [];
 
 const addBtn = document.querySelector(".addBtn");
-
-addBtn.addEventListener("click", () => {
+addBtn.addEventListener("click", myfunction);
+function myfunction() {
   console.log("We ara inside add  function");
   // wrapper div
   let wrapper_div = document.createElement("div");
@@ -62,20 +62,22 @@ addBtn.addEventListener("click", () => {
 
     let HTMLcarddata = ``;
 
-    dataArray.forEach(function(singleObjects) {
+    dataArray.forEach(function (singleObjects) {
 
       HTMLcarddata = HTMLcarddata + `
-    <div class="second-container">
-        <div class="item1">
-            <div >${singleObjects.header}</div>
-        </div>
-        <div >${singleObjects.description}</div>
-    </div>`
+      <div class="second-container">
+          <div class="item1">
+              <div >${singleObjects.header}</div>
+          </div>
+          <div class="item2">${singleObjects.description}</div>
+      </div>`
     })
 
     head_input.value = '';
     desc_input.value = '';
     const show_card_data = document.querySelector('.show_card_data');
     show_card_data.innerHTML = HTMLcarddata;
-  });
-});
+  })
+  addBtn.removeEventListener("click", myfunction);
+}
+
