@@ -1,0 +1,61 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    padding: 30px 30px;
+    height: 100%;
+    width: 700px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 10px 0 50px rgba(0, 0, 0, 0.2);
+}
+
+.img-container {
+    text-align: initial;
+    height: 100%;
+    width: 100px;
+}
+
+.img-class {
+    border-radius: 50%;
+    height: 100%;
+    width: 100px;
+    position: relative;
+}
+
+.name-container {
+    text-align: right;
+    height: 100%;
+}
+
+.designation-container {
+    text-align: right;
+    height: 100%;
+}
+
+.lorem-container {
+    text-align: right;
+    height: 100%;
+}
+
+.completed {
+    display: inline;
+    text-align: right;
+}
+
+
+.p-absolute{
+    position: absolute;
+}
+.p-relative{
+    position: relative;
+}
+.plus-class{
+    display: inline;
+    right: 0;
+}
