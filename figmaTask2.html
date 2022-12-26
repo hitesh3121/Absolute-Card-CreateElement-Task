@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Figma</title>
+    <link rel="stylesheet" href="./Style2.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="navbar">
+            <div class="navICON">
+                <div class="humburger">
+                    <img src="./assets/Humburger.svg" alt="Humburger" />
+                    <h1 class="p-2" style="font-family: 'Inter';">Learner Details</h1>
+                </div>
+                <div class="navICON">
+                    <div class="p-1">
+                        <img src="./assets/notification.svg" alt="Notificatiion" />
+                    </div>
+                    <div class="p-1 mt-1	">
+                        <img src="./assets/Rectangle 26.svg" alt="Rectangle" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
+            <div class="first md:flex sm:block" style="padding: 15px;">
+                <div class="first_part  ">
+                    <div class="p_1 sm:w-full">
+                        <div class="switchTab">
+                            <button class="tab" style="background-color: #808385; color: #ffffff;"
+                                onclick="openTab(event, 'form1')">Personal Information</button>
+                            <button class="tab" onclick="openTab(event, 'form2')">Programme Information</button>
+                            <button class="tab" onclick="openTab(event, 'form3')">Programme evidence</button>
+                        </div>
+                        <div style="padding-top: 15px; padding-left: 15px;">
+                            <div id="form1" class="tabcontent">
+                                <div style="padding-bottom: 10px;">
+                                    <h3 class="font_style">Full Name</h3>
+                                    <input class="input_name" type="text" placeholder="Vishal Gohel"><br>
+                                </div>
+                                <div style="padding-bottom: 10px;">
+                                    <h3 class="font_style">Email</h3>
+                                    <input class="input_name_error" type="email" placeholder="#&$()%!"><br>
+                                    <p style="color: red; font-size: 10px;">This input has some kind of error</p>
+                                </div>
+                                <div style="padding-bottom: 10px;">
+                                    <h3 class="font_style">Date Of Birth</h3>
+                                    <div class="date_input flex ">
+                                        <img src="./assets/Calendar.svg" alt="calender" />
+                                        <h1>Apr 04, 2019</h1>
+                                    </div>
+                                </div>
+                                <div style="padding-bottom: 10px;">
+                                    <h3 class="font_style">Contact No.</h3>
+                                    <div class="input_name flex" style="gap: 5px;">
+                                        <img src="./assets/mobile.svg" alt="Mobile" />
+                                        <h1>12345678</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="form2" class="tabcontent">
+                                <h3>Form 2</h3>
+                                <p>Example Information</p>
+                            </div>
+
+                            <div id="form3" class="tabcontent">
+                                <h3>From 3</h3>
+                                <p>Example 2 Information</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="second_part ">
+                    <div class="p_2 sm:w-full">2</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, formName) {
+            var i, tabcontent, tab;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tab = document.getElementsByClassName("tab");
+            for (i = 0; i < tab.length; i++) {
+                tab[i].className = tab[i].className.replace(" active", "");
+            }
+            document.getElementById(formName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+
+</html>
