@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,18 +9,219 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./uncodeCss.css" />
 </head>
+
 <body>
-    <div class="main_wrapper">
-        <div class="tab tabCSS sm:hidden">
-            <div class="tabNameProfile">Profile</div>
-            <div class="tabName">Participant 1</div>
-            <div class="tabName">Participant 2</div>
-            <div class="tabName">Participant 3</div>
-            <div class="tabName">Participant 4</div>
-        </div>
-        <div class="submitdiv">
-            <button class="submitbtn">Submit</button>
+    <div class="main-page lg:flex md:flex ">
+        <div class="main_wrapper lg:w-8/12 md:w-8/12">
+            <div class="tab tabCSS lg:flex md:flex">
+                <div class="tab">
+                    <button class="tablinks tabNameProfile" style="background: red;color: white;"
+                        onclick="openTab(event, 'profile')">Profile</button>
+                    <button class="tablinks tabName" onclick="openTab(event, 'participant_1')">Participant 1</button>
+                </div>
+            </div>
+            <form name="myForms" id="myForms" onsubmit="return validateForm()">
+                <div class="lg:px-10 md:px-10">
+                    <div id="profile" class="tabcontent form-div">
+                        <div class="companyName">
+                            <h1>EXHIBITORS - COMPANY PROFILE</h1>
+                        </div>
+                        <div class="justify-between pt-5 lg:flex md:block">
+                            <div class="lg:w-6/12 md:w-full md:pt-5">
+                                <h1>Company Name * </h1>
+                                <input class="form-text-input" id="companyName" name="companyName" type="text">
+                                <span id="error-companyName" class="error-color"></span>
+                            </div>
+                            <div class="lg:w-6/12 md:w-full md:pt-5 pt-5">
+                                <h1>Company Email *</h1>
+                                <input class="form-text-input" name="companyEmail" id="companyEmail" type="email">
+                                <span id="error-companyEmail" class="error-color"></span>
+                            </div>
+                        </div>
+                        <div class="justify-around">
+                            <div class="pt-5 lg:w-6/12 md:w-full md:pt-5">
+                                <h1>Main Office Line Number * </h1>
+                                <input class="form-text-input" placeholder="(000)-000-0000" id="cMobileNumber"
+                                    name="cMobileNumber" type="number">
+                                <span id="error-cMobileNumber" class="error-color"></span>
+                            </div>
+                            <div class="pt-5">
+                                <h1>Company Address *</h1>
+                                <input class="form-text-input" name="cAddress" id="cAddress" type="text">
+                            </div>
+                        </div>
+                        <div class="justify-between pt-5 lg:flex md:block">
+                            <div class="lg:w-6/12 md:w-full md:pt-5">
+                                <h1>City </h1>
+                                <input class="form-text-input" name="cCity" id="cCity" type="text">
+                            </div>
+                            <div class="lg:w-6/12 md:w-full md:pt-5 pt-5">
+                                <h1>State</h1>
+                                <input class="form-text-input" name="cState" id="cState" type="text">
+                            </div>
+                        </div>
+                        <div class="pt-5">
+                            <h1>Postal/ZIP Code *</h1>
+                            <input class="form-text-input" type="number" name="cPostal" id="cPostal">
+                            <span id="error-cPostal" class="error-color"></span>
+                        </div>
+                        <div class="lg:flex md:block justify-between pt-5">
+                            <div class="lg:w-6/12 md:w-full md:pt-5">
+                                <h1>Company Profile * </h1>
+                                <textarea id="companyProfile"
+                                    placeholder="Please provide a paragraph describing your company..."
+                                    class="form-text-input h-full" name="cCompanyProfile" rows="3" cols="25"></textarea>
+                                <span id="error-companyProfile" class="error-color"></span>
+
+                            </div>
+                            <div class="lg:w-6/12 md:w-full md:pt-5 pt-5">
+                                <h1>Upload Company Logo</h1>
+                                <input class="form-text-input h-full" placeholder="Darg and drop files here" name="cImg"
+                                    id="cImg" type="file">
+                                <span id="error-cImg" class="error-color"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="participant_1" style="display: none;" class="tabcontent form-div">
+                        <div class="companyName">
+                            <h1>EXHIBITORS - PARTICIAPANT</h1>
+                        </div>
+                        <div class="justify-between pt-5 lg:flex md:block">
+                            <div class="lg:w-6/12 md:w-full md:pt-5">
+                                <h1>Name * </h1>
+                                <input class="form-text-input" id="participantName" name="participantName" type="text">
+                                <span id="error-participantName" class="error-color"></span>
+                            </div>
+                            <div class="lg:w-6/12 md:w-full md:pt-5">
+                                <h1>Main Office Line Number * </h1>
+                                <input class="form-text-input" placeholder="(000)-000-0000" id="participantMobile"
+                                    name="participantMobile" type="number">
+                                <span id="error-participantMobile" class="error-color"></span>
+                            </div>
+                        </div>
+                        <div class="justify-between pt-5 lg:flex md:block">
+                            <div class="lg:w-6/12 md:w-full md:pt-5">
+                                <h1>Email *</h1>
+                                <input class="form-text-input" name="participantEmail" id="participantEmail"
+                                    type="email">
+                                <span id="error-participantEmail" class="error-color"></span>
+                            </div>
+                            <div class="lg:w-6/12 md:w-full md:pt-5">
+                                <h1>Title * </h1>
+                                <input class="form-text-input" placeholder="" id="participantTitle"
+                                    name="participantTitle" type="text">
+                                <span id="error-participantTitle" class="error-color"></span>
+                            </div>
+                        </div>
+                        <!-- <div class="selection">
+                            <div>
+                                <span class="question">Are You attending golf tournament? *</span>
+                            </div>
+                            <div>
+                                <select name="select" class="select" data-id="selection" id="selection">
+                                    <option value="">Please Select</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <div class="terms_1 terms">
+                                <input type="checkbox" class="check_box" name="terms_1" data-id="terms_1" required />
+                                <label for="terms_1">I have read & agree to CVx
+                                    <a href="www.google.com">Terms & Conditions</a></label>
+                            </div>
+                            <div class="terms_2 terms">
+                                <input type="checkbox" class="check_box" name="terms_2" data-id="terms_2" required />
+                                <label for="terms_2">I acknowledge & accept CVx will user my personal information
+                                    in accordance with the Event
+                                    <a href="www.google.com">Privacy Notice</a></label>
+                            </div>
+                        </div> -->
+                        <!-- <div class="register" onclick="register()">
+                            <input type="submit" class="addParticipantBTN" value="Register" id="register-btn" />
+                        </div> -->
+
+                    </div>
+                    <div class="AddParticipantdiv px-5 p-5">
+                        <button type="submit" id="addParticipant" value="Submit" class="addParticipantBTN">Add
+                            Participant</button>
+                    </div>
+                </div>
+            </form>
+
         </div>
     </div>
+    <script>
+        const errroMessage = "This field is required";
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        };
+
+        const addParticipantBTN = document.getElementById('addParticipant');
+        addParticipantBTN.addEventListener("click", e => {
+            e.preventDefault();
+            let companyName = document.getElementById('companyName');
+            let companyEmail = document.getElementById('companyEmail');
+            let cMobileNumber = document.getElementById('cMobileNumber');
+            let cAddress = document.getElementById('cAddress');
+            let cCity = document.getElementById('cCity');
+            let cState = document.getElementById('cState');
+            let cPostal = document.getElementById('cPostal');
+            let companyProfile = document.getElementById('companyProfile');
+            let cImg = document.getElementById('cImg');
+            if (companyName.value == "") {
+                document.getElementById('error-companyName').innerHTML = errroMessage;
+            }
+            if (companyEmail.value == "") {
+                document.getElementById('error-companyEmail').innerHTML = errroMessage;
+            }
+            if (cMobileNumber.value == "") {
+                document.getElementById('error-cMobileNumber').innerHTML = errroMessage;
+            }
+            if (cPostal.value == "") {
+                document.getElementById('error-cPostal').innerHTML = errroMessage;
+            }
+            if (companyProfile.value == "") {
+                document.getElementById('error-companyProfile').innerHTML = errroMessage;
+            }
+            if (cImg.value == "") {
+                document.getElementById('error-cImg').innerHTML = errroMessage;
+            }
+            else {
+                document.getElementById("error-companyName").style.visibility = "hidden";
+                document.getElementById("error-companyEmail").style.visibility = "hidden";
+                document.getElementById("error-cMobileNumber").style.visibility = "hidden";
+                document.getElementById("error-cPostal").style.visibility = "hidden";
+                document.getElementById("error-companyProfile").style.visibility = "hidden";
+                document.getElementById("error-cImg").style.visibility = "hidden";
+                console.log({
+                    company_name: companyName.value,
+                    company_email: companyEmail.value,
+                    company_mobile: cMobileNumber.value,
+                    company_address: cAddress.value,
+                    company_state: cState.value,
+                    company_city: cCity.value,
+                    company_postal: cPostal.value,
+                    company_profile_desc: companyProfile.value,
+                    company_img: cImg.value
+                })
+                document.getElementById("myForms").reset();
+            }
+
+        })
+    </script>
 </body>
+
 </html>
