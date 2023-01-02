@@ -21,11 +21,14 @@ body {
 
 .tabNameProfile {
     font-weight: bold;
-    border: 1px solid;
+    border: 1px solid #60635c;
+    color: #60635c;
     padding: 5px;
 }
 
 .active {
+    background-color: red;
+    color: white !important;
     border-bottom: 2.10762px solid #249EB1 !important;
 }
 
@@ -63,10 +66,6 @@ body {
     width: 45%;
 }
 
-.AddParticipantdiv {
-    display: flex;
-    justify-content: end;
-}
 
 .register {
     display: flex;
@@ -74,6 +73,18 @@ body {
 }
 
 .addParticipantBTN {
+    border: 2px solid;
+    display: inline;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    background: linear-gradient(135deg, rgba(123, 40, 144, 1) 0%, rgba(219, 73, 76, 1) 100%) !important;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.submitFormBTN {
     border: 2px solid;
     display: inline;
     font-family: "Inter", sans-serif;
