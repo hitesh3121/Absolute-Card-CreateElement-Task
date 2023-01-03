@@ -185,12 +185,12 @@
             evt.currentTarget.className += " active";
         };
 
-        const showError = (data) => {
-            document.getElementById(data).innerHTML = errroMessage;
+        const showError = (elementID) => {
+            document.getElementById(elementID).innerHTML = errroMessage;
         };
 
-        const removeError = (data) => {
-            document.getElementById(data).style.visibility = "hidden";
+        const removeError = (elementID) => {
+            document.getElementById(elementID).style.visibility = "hidden";
         };
 
         function addParticipant() {
@@ -200,7 +200,7 @@
             companyForm.style.display = "none";
         };
 
-        const registerParticipant = (e) => {
+        const registerParticipant = () => {
             let participantData = {};
             const participantForm = document.getElementById('participantForm');
             const companyForm = document.getElementById('myForms');
